@@ -39,7 +39,19 @@ doc/**/*.pdf
 也就是修改之后还没有暂存起来的变化内容。<br/>
 git diff 本身只显示尚未暂存的改动，而不是自上次提交以来所做的所有改动。<br/>
 ### git log 
-查看提交历史
+git log查看提交历史,当然，常用的参数也是我们必须掌握的:
+```$xslt
+-p 显示每次提交的内容差异
+-number 显示近几次的提交，减少搜索量
+--stat 每次提交的简略的统计信息
+--pretty 这个选项可以指定使用不同于默认格式的方式展示提交历史  eg：--pretty=online,short，full, fuller 和 但最有意思的 format，可以定制要显示的记录格式。
+--since 某个时间段之后(也是可是git log --since=2.weeks 表示最近两周)
+--until 某个时间段之前
+```
+如果要查看 Git 仓库中，2008 年 10 月期间，Junio Hamano 提交的但未合并的测试文件，可以用下面的查询命令：
+```$xslt
+$ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \
+```
 # git基础实践
 ### 1.查看已跟踪文件修改变化
  第一步:git status 查看修改文件的状态<br/>
