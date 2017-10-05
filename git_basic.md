@@ -75,3 +75,16 @@ $ git rm --cached README
 ### 当我们使用git rm误删文件时，如何回退
 1.使用git log 查看提交日志，找到最近的commit id
 2.按ctrl+c退出当前，使用 git reset --hard "commit id"
+
+上面这种方法是比较恶心的，因为它会完全的回退到上个版本，而我们不过是想回退到删除之前时的状态，
+那我们应该这样做:<br/>
+
+```
+git status 文件是绿色
+git reset HEAD filename 将指针指向被删的文件
+git status 发现文件已经变为红色
+git checkout filename 
+ls  发现文件已经找回
+```
+原理会在后面部分讲述，这样做的好处第一是不用回到上一个版本而造成其它文件修改被复原，
+第二是完全符合我们的需求，可以继续做我们将要做的事情。
