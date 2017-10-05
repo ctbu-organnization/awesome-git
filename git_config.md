@@ -10,5 +10,7 @@ git有三种配置
 git config --global user.name yourname
 git config --global user.email  youremail
 ```
-ps:yourname和youremail最好和github上保持一致
+ps:yourname和youremail最好和github上保持一致 
+
+同步github：
 
