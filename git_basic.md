@@ -128,7 +128,46 @@ git reset --hard（这里可以不加该选项) filename
 记住，在 Git 中任何 已提交的 东西几乎总是可以恢复的。 甚至那些被删除的分支中的提交或使用 --amend 选项覆盖的提交也可以恢复（阅读 数据恢复 了解数据恢复）。 然而，任何你未提交的东西丢失后很可能再也找不到了。
 
 # 远程仓库的使用
+### 远程仓库的使用
+为了能在任意 Git 项目上协作，你需要知道如何管理自己的远程仓库。
+远程仓库是指托管在因特网或其他网络中的你的项目的版本库。
+你可以有好几个远程仓库，通常有些仓库对你只读，有些则可以读写。 
+与他人协作涉及管理远程仓库以及根据需要推送或拉取数据。 
+管理远程仓库包括了解如何添加远程仓库、移除无效的远程仓库、管理不同的远程分支并定义它们是否被跟踪等等。
+### 克隆远程仓库
+```
+ git clone git@github.com:ctbu-organnization/awesome-git.git
+ git branch -a (查看所有分支)
+ git remote -v (列出所有的远程分支)
+```
+### 添加远程仓库
+ ```
+ git remote add myq git@github.com:ctbu-organnization/awesome-git.git
+ ```
+### 从远程仓库中抓取与拉取
+ ```
+  git fetch [remote-name]
+```
+这个命令会访问远程仓库，从中拉取所有你还没有的数据。 执行完成后，你将会拥有那个远程仓库中所有分支的引用，可以随时合并或查看。
 
+必须注意 git fetch 命令会将数据拉取到你的本地仓库 - 它并不会自动合并或修改你当前的工作。 当准备好时你必须手动将其合并入你的工作。
+### 推送到远程仓库
+当你想分享你的项目时，必须将其推送到上游。 这个命令很简单：git push [remote-name] [branch-name]。 
+
+当你想要将 master 分支推送到 origin 服务器时（再次说明，克隆时通常会自动帮你设置好那两个名字），那么运行这个命令就可以将你所做的备份到服务器：
+```
+ git push origin master
+
+```
+### 查看远程仓库
+ ```
+  git remote show [remote-name]
+```
+### 远程仓库的移除与重命名
+```
+ git remote rename oldname newname
+ git remote rm name
+```
 # 打标签
 ### 列出标签
 ```$xslt
