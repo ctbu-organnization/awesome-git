@@ -34,10 +34,15 @@ id_rsa.pub
 第一个是私钥文件（private key），第二个是公钥文件(public key)。
 我们需要将公钥文件里面的内容添加到github上。
 ### 添加到github
-在github setting里面的SSH and GPG keys里面点击new SSH keys
+在github setting里面的SSH and GPG keys里面点击new SSH keys:
+
 ![image_1bs0882tc1oj45gi19g41ehn10dr9.png-92.6kB][2]
-名字随便填，key里面把刚刚生成的公钥文件里面的内容粘贴进来。一定要粘贴public key,一定要粘贴public key,一定要粘贴public key,然后提交表单就行了，
+
+名字随便填，key里面把刚刚生成的公钥文件里面的内容粘贴进来。
+
 ![image_1bs088v92kfvc7ftq14b41se6m.png-21.1kB][3]
+
+一定要粘贴public key,一定要粘贴public key,一定要粘贴public key,然后提交表单就行了，
 ### 测试ssh keys是否设置成功
 使用ssh -T 命令测试设置是否成功,如果出现
 >You've successfully authenticated, but GitHub does not provide shell access.
